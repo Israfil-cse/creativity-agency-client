@@ -1,0 +1,13 @@
+.clientItemStyle{
+    width: 100%;
+    height: 230px;
+    border: 1px solid gray;
+    padding: 20px;
+}
+.clientImg{
+    height: 100px;
+    float: left;
+}
+.title{
+    margin-left: 110px;
+}
