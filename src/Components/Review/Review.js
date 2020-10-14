@@ -1,11 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Review.css';
 import logo from '../../images/logos/logo.png';
 import { useForm } from "react-hook-form";
+import { useHistory } from 'react-router-dom';
 
 const Review = () => {
-    const { register, handleSubmit, watch, errors } = useForm();
-    const onSubmit = data => console.log(data);
+
+    // review data insert
+    const history = useHistory();
+    const { register, handleSubmit, errors } = useForm();
+    const onSubmit = data => {
+        fetch('http://localhost:4000/customarReview', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    alert('Your Review has been submitted successfully')
+                }
+                history.push('/')
+            })
+    }
+
+
     return (
         <div>
             <div className="row">
@@ -30,12 +49,12 @@ const Review = () => {
                             {errors.name && <span>name is required</span>}
 
                             <br />
-                            <input className="form-control" name="ComphanyName" placeholder="comphanys name designation" ref={register({ required: true })} />
-                            {errors.ComphanyName && <span>ComphanyName is required</span>}
+                            <input className="form-control" name="surName" placeholder="comphanys name designation" ref={register({ required: true })} />
+                            {errors.surName && <span>ComphanyName is required</span>}
                             <br />
 
-                            <textarea className="form-control py-4" name="Discription" placeholder="Discription" ref={register({ required: true })} />
-                            {errors.Discription && <span>Discription is required</span>}
+                            <textarea className="form-control py-4" name="discription" placeholder="Discription" ref={register({ required: true })} />
+                            {errors.discription && <span>Discription is required</span>}
                             <br />
                             <br />
                             <input className="btn btn-dark px-5" type="submit" value="Send" />

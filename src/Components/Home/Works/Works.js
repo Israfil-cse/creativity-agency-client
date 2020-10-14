@@ -29,9 +29,11 @@ const Works = () => {
                         <Slide index={3}><img src={carouse4} alt="" /></Slide>
                         <Slide index={4}><img src={carouse5} alt="" /></Slide>
                     </Slider>
-                    <div className="d-flex justify-content-center mt-5">
-                    <ButtonBack>Back</ButtonBack>
-                    <ButtonNext>Next</ButtonNext>
+                    <div className="d-flex justify-content-center  mt-5">
+                        <div className="carouselBtn">
+                        <ButtonBack>Back</ButtonBack>
+                        <ButtonNext>Next</ButtonNext>
+                        </div>
                     </div>
                 </CarouselProvider>
             </div>

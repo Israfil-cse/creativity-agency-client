@@ -1,18 +1,22 @@
 [
     {
-        "name": "Web & Mobail design",
-        "discription": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product",
-        "image": "https://i.ibb.co/HN14Vcx/service1.png"
+        "name": "Nash Partik",
+        "surName": "CEO,Manpol",
+        "discription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum deserunt aut ullam perferendis. Perspiciatis labore dignissimos!",
+        "image": "https://i.ibb.co/BGYrbMf/customer-1.png"
     },
     {
-        "name": "Graphic design",
-        "discription": "Amazing flyers, social media posts and brand representaians that would make your brand stand out",
-        "image": "https://i.ibb.co/qJ2SxgS/service2.png"
+        "name": "Miriam Barron",
+        "surName": "CEO,Manpol",
+        "discription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum deserunt aut ullam perferendis. Perspiciatis labore dignissimos!",
+        "image": "https://i.ibb.co/nLkp2HZ/customer-2.png"
     },
     {
-        "name": "Web development",
-        "discription": "With well written codes, we bulid amazing apps for all platfoms, mobile and web apps in general",
-        "image": "https://i.ibb.co/P1JN9f4/service3.png"
+        "name": "Bria Malone",
+        "surName": "CEO,Manpol",
+        "discription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum deserunt aut ullam perferendis. Perspiciatis labore dignissimos!",
+        "image": "https://i.ibb.co/fQ6mcTY/customer-3.png"
     }
+    
     
 ]

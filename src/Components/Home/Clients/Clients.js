@@ -1,43 +1,40 @@
-import React from 'react';
-import client1 from '../../../images/customer-1.png';
-import client2 from '../../../images/customer-2.png';
-import client3 from '../../../images/customer-3.png';
+import React, { useEffect, useState } from 'react';
 import ClientsDetails from './ClientsDetails';
 
-const clientsData = [
-    {
-        name: 'Nash Partik',
-        surName: 'CEO,Manpol',
-        discription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum deserunt aut ullam perferendis. Perspiciatis labore dignissimos! .",
-        image: client1
-    },
-    {
-        name: 'Miriam Barron',
-        surName: 'CEO,Manpol',
-        discription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum deserunt aut ullam perferendis. Perspiciatis labore dignissimos! .",
-        image: client2
-    },
-    {
-        name: 'Bria Malone',
-        surName: 'CEO,Manpol',
-        discription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum deserunt aut ullam perferendis. Perspiciatis labore dignissimos! .",
-        image: client3
-    }
-
-]
-
 const Clients = () => {
+
+
+    // // ADD fakeData to real Database
+    // const handlAddData = () => {
+    //         fetch('http://localhost:4000/addClicntData', {
+    //             method: 'POST',
+    //             headers: { 'Content-Type': 'application/json' },
+    //             body: JSON.stringify(fakedata)
+    //         })
+
+    // }
+
+    
+    // review data approve
+    const [clientReview, setClientReview] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:4000/reviewApprove')
+            .then(res => res.json())
+            .then(data => setClientReview(data))
+    }, []);
+
+
     return (
         <div className="mt-5 pt-5">
             <h2 className="text-center">Clients <span style={{ color: '#7BB35A' }}>Feedback</span></h2>
-
             <div className="container">
                 <div className="row">
                     {
-                        clientsData.map(client => <ClientsDetails client={client}></ClientsDetails>)
+                        clientReview.map(review => <ClientsDetails review={review}></ClientsDetails>)
                     }
                 </div>
             </div>
+
         </div>
     );
 };

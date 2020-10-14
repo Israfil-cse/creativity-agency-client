@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './PlacedOrder.css';
 import logo from '../../images/logos/logo.png';
 import { useForm } from "react-hook-form";
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { UserContext } from '../../App';
 
 const PlacedOrder = () => {
+    
     // cetagory matching
     const {OrderInfo_id} = useParams();
     const [matchCategory, setMatchCategory] = useState({});
@@ -17,8 +19,22 @@ const PlacedOrder = () => {
         })
     },[]);
 
-    const { register, handleSubmit, watch, errors } = useForm();
-    const onSubmit = data => console.log(data);
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const { register, handleSubmit, errors } = useForm();
+    const onSubmit = data => {
+        const user = {...loggedInUser, matchCategory, data }
+        fetch('http://localhost:4000/PlecedOrderInfo', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    alert('Your Order has been submitted successfully')
+                }
+            })
+    }
     return (
         <div>
             <div className="row">
@@ -28,7 +44,7 @@ const PlacedOrder = () => {
                     </figure>
                     <nav className="pl-5 mt-5">
                         <li>Order</li>
-                        <li>Service list</li>
+                        <li><Link to="/ServiceList">Service list</Link></li>
                         <li>Review</li>
                     </nav>
                 </div>
@@ -43,7 +59,7 @@ const PlacedOrder = () => {
                             {errors.name && <span>name is required</span>}
 
                             <br />
-                            <input className="form-control" name="email" placeholder="your email" ref={register({ required: true })} />
+                            <input className="form-control" name="email" defaultValue={loggedInUser.email} ref={register({ required: true })} />
                             {errors.email && <span>email is required</span>}
                             <br />
 
@@ -55,11 +71,11 @@ const PlacedOrder = () => {
                             {errors.projectDetails && <span>projectDetails is required</span>}
                             <br />
 
-                            <di className="d-flex justify-content-between">
+                            <div className="d-flex justify-content-between">
                                 <input className="form-control" name="price" placeholder="Price" ref={register({ required: true })} />
                                 {errors.price && <span>price is required</span>}
                                 <input className="form-control" type="file" />
-                            </di>
+                            </div>
                             <br />
                             <input className="btn btn-dark px-5" type="submit" value="Send" />
                         </form>
