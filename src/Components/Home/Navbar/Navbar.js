@@ -13,7 +13,7 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav ml-auto item">
-                        <a className="nav-link active" href="#"><Link to="/home">Home</Link><span className="sr-only">(current)</span></a>
+                        <Link to="/home" className="nav-link active">Home<span className="sr-only">(current)</span></Link>
                         <a className="nav-link" href="#work">Our Portfolio</a>
                         <a className="nav-link" href="#">Our Team</a>
                         <a className="nav-link" href="#contact">Contact us</a>

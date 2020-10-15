@@ -38,7 +38,7 @@ const Clients = () => {
                     </div>
                 </div>
                     {
-                        clientReview.map(review => <ClientsDetails review={review}></ClientsDetails>)
+                        clientReview.map(review => <ClientsDetails review={review} key={review._id}></ClientsDetails>)
                     }
                 </div>
             </div>
