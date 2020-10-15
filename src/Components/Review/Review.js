@@ -1,8 +1,6 @@
 import React, { useContext, useState } from 'react';
 import './Review.css';
 import logo from '../../images/logos/logo.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
 import { useForm } from "react-hook-form";
 import { Link, useHistory } from 'react-router-dom';
 import { UserContext } from '../../App';
@@ -57,7 +55,7 @@ const Review = () => {
                         <img style={{ height: '50px' }} src={logo} alt="" />
                     </figure>
                     <nav className="pl-5 mt-5">
-                        <li><Link to="/Review"><FontAwesomeIcon icon={faCommentDots}/> Review</Link></li>
+                        
                     </nav>
                 </div>
                 <div className="col-md-9">

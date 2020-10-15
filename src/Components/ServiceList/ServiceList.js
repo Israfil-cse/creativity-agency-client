@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './ServiceList.css';
 import logo from '../../images/logos/logo.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
 import { useForm } from "react-hook-form";
 import { UserContext } from '../../App';
 import ServiceListDetails from './ServiceListDetails';
@@ -27,7 +29,7 @@ const ServiceList = () => {
                     </figure>
                     <nav className="pl-5 mt-5">
                         <li><Link to="/serviceList">Service list</Link></li>
-                        <li><Link to="/Review">Review</Link></li>
+                        <li><Link to="/Review"><FontAwesomeIcon icon={faCommentDots}/> Review</Link></li>
                     </nav>
                 </div>
                 <div className="col-md-9">

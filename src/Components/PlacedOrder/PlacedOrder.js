@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import './PlacedOrder.css';
 import logo from '../../images/logos/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faShoppingBag, faShoppingCart, faUserPlus } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingBag, faShoppingCart, } from '@fortawesome/free-solid-svg-icons'
 import { useForm } from "react-hook-form";
 import { Link, useParams } from 'react-router-dom';
 import { UserContext } from '../../App';
@@ -50,9 +50,7 @@ const PlacedOrder = () => {
                     <nav className="pl-5 mt-5">
                         <li><FontAwesomeIcon icon={faShoppingCart}/> Order</li>
                         <li><Link to="/ServiceList"><FontAwesomeIcon icon={faShoppingBag}/> Service list</Link></li>
-                        <li><Link to="/ServicesUser"><FontAwesomeIcon icon={faShoppingBag}/> Services User</Link></li>
-                        {/* <li><Link to="/addService"><FontAwesomeIcon icon={faPlus}/> Add Service</Link></li> */}
-                        {/* <li><Link to="/makeAdmin"><FontAwesomeIcon icon={faUserPlus}/> Make Admin</Link></li> */}
+                        <li><Link to="/ServicesUser"><FontAwesomeIcon icon={faShoppingBag}/> Ordered service</Link></li>
                     </nav>
                 </div>
                 <div className="col-md-9">
@@ -79,9 +77,9 @@ const PlacedOrder = () => {
                             <br />
 
                             <div className="d-flex justify-content-between">
-                                <input className="form-control" name="price" placeholder="Price" ref={register({ required: true })} />
+                                <input className="form-control" name="price" placeholder="Price" defaultValue="1000tk" ref={register({ required: true })} />
                                 {errors.price && <span>price is required</span>}
-                                <input className="form-control" type="file" />
+                                {/* <input className="form-control" type="file" /> */}
                             </div>
                             <br />
                             <input className="btn btn-dark px-5" type="submit" value="Send" />

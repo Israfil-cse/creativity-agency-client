@@ -1,7 +1,7 @@
 .from_area{
-    height: 600px;
     background-color: #F4F7FC;
     margin-top: 20px;
+    padding-bottom: 50px;
 }
 nav li{
     list-style: none;

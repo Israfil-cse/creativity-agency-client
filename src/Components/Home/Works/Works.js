@@ -11,7 +11,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 
 const Works = () => {
     return (
-        <div className="carousel_parent">
+        <div id="work" className="carousel_parent">
             <div className="container">
 
                 <div>
@@ -29,7 +29,7 @@ const Works = () => {
                         <Slide index={3}><img src={carouse4} alt="" /></Slide>
                         <Slide index={4}><img src={carouse5} alt="" /></Slide>
                     </Slider>
-                    <div className="d-flex justify-content-center  mt-5">
+                    <div className="d-flex justify-content-center  mt-5 pb-5">
                         <div className="carouselBtn">
                         <ButtonBack>Back</ButtonBack>
                         <ButtonNext>Next</ButtonNext>

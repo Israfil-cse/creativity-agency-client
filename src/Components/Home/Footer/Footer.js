@@ -3,7 +3,7 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <footer>
+        <footer id="contact">
             <div className="container">
                 <div className="mt-5 pt-5 row">
                     <div className="col-md-6">
@@ -25,7 +25,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <p className="text-center mt-5 pt-5">copyright orange labs 2020</p>
+            <p className="text-center mt-5 pt-5 pb-5">copyright orange labs 2020</p>
         </footer>
     );
 };

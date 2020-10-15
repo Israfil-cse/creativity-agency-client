@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import './ServicesUser.css';
 import { Link } from 'react-router-dom';
 import logo from '../../images/logos/logo.png';
+import { faPlus, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ServicesUser = () => {
+
     const [ServicesUserList, setServicesUserList] = useState([]);
     useEffect(() => {
         fetch('http://localhost:4000/servicesUserList')
@@ -18,8 +22,12 @@ const ServicesUser = () => {
                     </figure>
                     <nav className="pl-5 mt-5">
                         <li>Services User</li>
-                        <li><Link to="/addService">Add Service</Link></li>
-                        <li><Link to="/mekeAdmin">Make Admin</Link></li>
+                        <li><Link to="/addService"><FontAwesomeIcon icon={faPlus}/> Add Service</Link></li>
+                        <li><Link to="/makeAdmin"><FontAwesomeIcon icon={faUserPlus}/> Make Admin</Link></li>
+                        
+
+                        
+
                     </nav>
                 </div>
                 <div className="col-md-9">

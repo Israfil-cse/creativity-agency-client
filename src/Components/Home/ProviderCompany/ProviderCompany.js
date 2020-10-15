@@ -9,12 +9,28 @@ import airbnb from '../../../images/logos/airbnb.png';
 const ProviderCompany = () => {
     return (
         <div className="provider-container">
-            <div className="container d-flex justify-content-between my-5 ">
-                <img src={slack} alt="" />
-                <img src={google} alt="" />
-                <img src={uber} alt="" />
-                <img src={netflex} alt="" />
-                <img src={airbnb} alt="" />
+
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-2 col-sm-6">
+                        <img src={slack} alt="" />
+                    </div>
+                    <div className="col-md-2 col-sm-6">
+                        <img src={google} alt="" />
+                    </div>
+                    <div className="col-md-2 col-sm-6">
+                        <img src={uber} alt="" />
+                    </div>
+                    <div className="col-md-2 col-sm-6">
+                        <img src={netflex} alt="" />
+                    </div>
+                    <div className="col-md-2 col-sm-6">
+                        <img src={airbnb} alt="" />
+                    </div>
+                    <div className="col-md-2 col-sm-6">
+                        <img src={airbnb} alt="" />
+                    </div>
+                </div>
             </div>
         </div>
     );

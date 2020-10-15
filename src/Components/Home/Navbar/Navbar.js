@@ -1,6 +1,7 @@
 import React from 'react';
 import './Navbar.css';
 import logo from '../../../images/logos/logo.png';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
@@ -12,10 +13,10 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav ml-auto item">
-                        <a className="nav-link active" href="#">Home <span className="sr-only">(current)</span></a>
-                        <a className="nav-link" href="#">Our Portfolio</a>
+                        <a className="nav-link active" href="#"><Link to="/home">Home</Link><span className="sr-only">(current)</span></a>
+                        <a className="nav-link" href="#work">Our Portfolio</a>
                         <a className="nav-link" href="#">Our Team</a>
-                        <a className="nav-link" href="#">Contact us</a>
+                        <a className="nav-link" href="#contact">Contact us</a>
                         <button className="btn btn-dark px-4">Login</button>
                     </div>
                 </div>

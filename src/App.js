@@ -30,6 +30,9 @@ function App() {
           <Route exact path="/">
             <Home></Home>
           </Route>
+          <Route exact path="/home">
+            <Home></Home>
+          </Route>
           <Route path="/OrderInfo/:OrderInfo_id">
             <PlacedOrder></PlacedOrder>
           </Route>
