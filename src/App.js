@@ -16,6 +16,7 @@ import PrivetRoute from './Components/PrivetRoute/PrivetRoute';
 import ServicesUser from './Components/ServicesUser/ServicesUser';
 import AddService from './Components/AddService/AddService';
 import MekeAdmin from './Components/MekeAdmin/MekeAdmin';
+import Nomatch from './Components/Nomatch/Nomatch';
 
 export const UserContext = createContext();
 
@@ -33,9 +34,9 @@ function App() {
           <Route exact path="/home">
             <Home></Home>
           </Route>
-          <Route path="/OrderInfo/:OrderInfo_id">
+          <PrivetRoute path="/OrderInfo/:OrderInfo_id">
             <PlacedOrder></PlacedOrder>
-          </Route>
+          </PrivetRoute>
           <Route path="/ServiceList">
             <ServiceList></ServiceList>
           </Route>
@@ -53,6 +54,9 @@ function App() {
           </Route>
           <Route path="/login">
             <Login></Login>
+          </Route>
+          <Route path="*">
+           <Nomatch></Nomatch>
           </Route>
         </Switch>
       </Router>
