@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import './Services.css';
 
 const ServicesDetails = (props) => {
-    const {_id, name, image, discription} = props.service;
+    const {_id, title,discription} = props.service;
     return (
         <div className="col-md-4 d-flex justify-content-center">
-            <div className="serviceItemStyle text-dark">
+            <div className="serviceItemStyle">
                 <Link to={`/OrderInfo/${_id}`}>
-                    <img className="servicImg" src={image} alt="" />
-                    <h4>{name}</h4>
-                    <p>{discription}</p>
+                    <img className="servicImg" src={`data:image/png;base64,${props.service.image.img}`} alt="" />
+                    <h4 className="text-dark">{title}</h4>
+                    <p className="text-dark">{discription}</p>
                 </Link>
             </div>
 

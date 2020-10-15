@@ -12,7 +12,7 @@ const Footer = () => {
 
                     </div>
                     <div className="col-md-6">
-                        <form>
+                        <form className="formStyle">
                             <input className="form-control" type="text" placeholder="Your email address" />
                             <br />
                             <input className="form-control" type="text" placeholder="Your name/ company" />

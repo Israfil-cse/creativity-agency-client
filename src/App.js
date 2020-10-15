@@ -13,6 +13,9 @@ import PlacedOrder from './Components/PlacedOrder/PlacedOrder';
 import ServiceList from './Components/ServiceList/ServiceList';
 import Review from './Components/Review/Review';
 import PrivetRoute from './Components/PrivetRoute/PrivetRoute';
+import ServicesUser from './Components/ServicesUser/ServicesUser';
+import AddService from './Components/AddService/AddService';
+import MekeAdmin from './Components/MekeAdmin/MekeAdmin';
 
 export const UserContext = createContext();
 
@@ -35,6 +38,15 @@ function App() {
           </Route>
           <Route path="/Review">
             <Review></Review>
+          </Route>
+          <Route path="/ServicesUser">
+            <ServicesUser></ServicesUser>
+          </Route>
+          <Route path="/addService">
+            <AddService></AddService>
+          </Route>
+          <Route path="/makeAdmin">
+            <MekeAdmin></MekeAdmin>
           </Route>
           <Route path="/login">
             <Login></Login>

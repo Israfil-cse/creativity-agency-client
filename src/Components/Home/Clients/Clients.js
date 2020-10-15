@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ClientsDetails from './ClientsDetails';
+import spin from '../../../images/icons/spin.gif';
 
 const Clients = () => {
 
@@ -29,6 +30,13 @@ const Clients = () => {
             <h2 className="text-center">Clients <span style={{ color: '#7BB35A' }}>Feedback</span></h2>
             <div className="container">
                 <div className="row">
+                <div style={{width: '100%'}} className="d-flex justify-content-center">
+                    <div style={{width: '200px'}}>
+                    {
+                        clientReview.length === 0 && <img src={spin} alt="" />
+                    }
+                    </div>
+                </div>
                     {
                         clientReview.map(review => <ClientsDetails review={review}></ClientsDetails>)
                     }

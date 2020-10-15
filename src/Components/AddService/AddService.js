@@ -1,21 +1,17 @@
-import React, { useContext, useState } from 'react';
-import './Review.css';
-import logo from '../../images/logos/logo.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
-import { useForm } from "react-hook-form";
+import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { UserContext } from '../../App';
+import logo from '../../images/logos/logo.png';
 
-const Review = () => {
+const AddService = () => {
 
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+     // service insert
+    const history = useHistory();
 
-    const [info, setInfo] = useState({});
+    const [serviceinfo, setServiceInfo] = useState({});
     const handleBlur = e => {
-        const newInfo = { ...info };
+        const newInfo = { ...serviceinfo };
         newInfo[e.target.name] = e.target.value;
-        setInfo(newInfo);
+        setServiceInfo(newInfo);
     };
 
     const [fileStorage, setFileStorage] = useState(null);
@@ -24,17 +20,15 @@ const Review = () => {
         setFileStorage(newFile)
     }
 
-    // review data insert
-    const history = useHistory();
+   
 
     const handleSubmit = (e) => {
         const formData = new FormData()
         formData.append('file', fileStorage);
-        formData.append('name', info.name);
-        formData.append('surName', info.surName);
-        formData.append('discription', info.discription);
+        formData.append('title', serviceinfo.title);
+        formData.append('discription', serviceinfo.discription);
 
-        fetch('http://localhost:4000/customarReview', {
+        fetch('http://localhost:4000/addService', {
             method: 'POST',
             body: formData
         })
@@ -44,11 +38,9 @@ const Review = () => {
             .catch(error => {
                 console.error(error)
             })
-            alert('Your Review has been submitted successfully');
+            alert('Your service has been added successfully');
             history.push('/')
     }
-
-
     return (
         <div>
             <div className="row">
@@ -57,29 +49,31 @@ const Review = () => {
                         <img style={{ height: '50px' }} src={logo} alt="" />
                     </figure>
                     <nav className="pl-5 mt-5">
-                        <li><Link to="/Review"><FontAwesomeIcon icon={faCommentDots}/> Review</Link></li>
+                    <li><Link to="/ServicesUser">Services User</Link></li>
+                        <li>Add Service</li>
+                        <li><Link to="/mekeAdmin">Make Admin</Link></li>
                     </nav>
                 </div>
                 <div className="col-md-9">
                     <div className="d-flex justify-content-between">
                         <h4 className="mt-5 ml-5">Order</h4>
-                        <h4 className="mt-5 mr-5">{loggedInUser.name}</h4>
+                        <h4 className="mt-5 mr-5">name</h4>
                     </div>
                     <div className="from_area">
-                        <form className="pt-5 pl-5" onSubmit={handleSubmit}>
-                            <input onBlur={handleBlur} className="form-control" name="name" placeholder="your name" required />
+                    <form className="pt-5 pl-5" onSubmit={handleSubmit}>
+                            <h3>Service Title</h3>
+                            <input onBlur={handleBlur} className="form-control" name="title" placeholder="your name" required />
                             <br />
                             <br />
-                            <input onBlur={handleBlur} className="form-control" name="surName" placeholder="comphanys name designation" required />
-                            <br />
-                            <br />
+                            <h3>Service Discription</h3>
                             <textarea onBlur={handleBlur} className="form-control py-4" name="discription" placeholder="Discription" required />
                             <br />
                             <br />
+                            <h3>Upload Icon</h3>
                             <input onChange={handleFileChange} type="file" />
                             <br />
                             <br />
-                            <input className="btn btn-dark px-5" type="submit" value="Send" />
+                            <input className="btn btn-dark px-5" type="submit" value="Submit" />
                         </form>
                     </div>
                 </div>
@@ -88,4 +82,4 @@ const Review = () => {
     );
 };
 
-export default Review;
+export default AddService;

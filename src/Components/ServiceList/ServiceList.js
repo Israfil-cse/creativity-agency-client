@@ -26,15 +26,14 @@ const ServiceList = () => {
                         <img style={{ height: '50px' }} src={logo} alt="" />
                     </figure>
                     <nav className="pl-5 mt-5">
-                        <li>Order</li>
-                        <li>Service list</li>
+                        <li><Link to="/serviceList">Service list</Link></li>
                         <li><Link to="/Review">Review</Link></li>
                     </nav>
                 </div>
                 <div className="col-md-9">
                     <div className="d-flex justify-content-between">
                         <h4 className="mt-5 ml-5">Order</h4>
-                        <h4 className="mt-5 mr-5">name</h4>
+                        <h4 className="mt-5 mr-5">{loggedInUser.name}</h4>
                     </div>
                     <div className="from_area">
                         <div className="row">

@@ -1,14 +1,14 @@
 import React from 'react';
+import './ServiceList.css'
 
 const ServiceListDetails = (props) => {
     const {name, image, discription} = props.exctOd.matchCategory;
-    console.log(props);
     return (
-        <div>
-            <div className="col-md-6">
-                <img src={image} alt=""/>
-                <h2>{name}</h2>
-                <p>{discription}</p>
+        <div className="col-md-6 d-flex justify-content-center">
+            <div className="reviewItemStyle">
+                <img className="img-fluid reviewImg" src={image} alt="" />
+                <h2 className="text-center">{name}</h2>
+                <p className="text-center">{discription}</p>
             </div>
         </div>
     );
