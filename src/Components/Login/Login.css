@@ -4,6 +4,16 @@
     margin: 0 auto;
     border: 1px solid gray
 }
+@media only screen and (max-width: 479px){
+    .parentForm{
+        width: 250px;
+        height: 250px;
+        margin: 0 auto;
+        border: 1px solid gray
+    }
+
+   
+}
 .btnStyle{
     width: 93%;
     height: 41px;
@@ -12,6 +22,20 @@
     margin-left: 15px;
     margin-top: 50px;
 
+}
+@media only screen and (max-width: 479px){
+    .btnStyle{
+        width: 90%;
+        height: 35px;
+        border: 1px solid black;
+        border-radius: 15px;
+        margin-top: 20px;
+        outline: none;
+    
+    }
+    h6{
+        font-size:8px
+    }
 }
 .btnStyle img{
     height: 25px;

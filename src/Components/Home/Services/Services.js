@@ -11,7 +11,7 @@ const Services = () => {
 
     // // ADD Data real Database
     // const handleAdd = () => {
-    //     fetch('http://localhost:4000/addServicesData', {
+    //     fetch('https://frozen-beyond-82990.herokuapp.com/addServicesData', {
     //         method: 'POST',
     //         headers: { 'Content-Type': 'application/json' },
     //         body: JSON.stringify(fakedata)
@@ -19,7 +19,7 @@ const Services = () => {
     // }
 
     useEffect(() => {
-        fetch('http://localhost:4000/allServicesData')
+        fetch('https://frozen-beyond-82990.herokuapp.com/allServicesData')
             .then(res => res.json())
             .then(data => setServicesData(data))
     }, [])

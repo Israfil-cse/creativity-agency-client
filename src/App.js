@@ -17,6 +17,7 @@ import ServicesUser from './Components/ServicesUser/ServicesUser';
 import AddService from './Components/AddService/AddService';
 import MekeAdmin from './Components/MekeAdmin/MekeAdmin';
 import Nomatch from './Components/Nomatch/Nomatch';
+import DashBoard from './Components/DashBoard/DashBoard';
 
 export const UserContext = createContext();
 
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <PrivetRoute path="/OrderInfo/:OrderInfo_id">
             <PlacedOrder></PlacedOrder>
+          </PrivetRoute>
+          <PrivetRoute path="/adminPanel">
+            <DashBoard></DashBoard>
           </PrivetRoute>
           <Route path="/ServiceList">
             <ServiceList></ServiceList>

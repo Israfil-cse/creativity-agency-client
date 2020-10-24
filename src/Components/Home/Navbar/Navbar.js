@@ -17,7 +17,7 @@ const Navbar = () => {
                         <a className="nav-link" href="#work">Our Portfolio</a>
                         <a className="nav-link" href="#">Our Team</a>
                         <a className="nav-link" href="#contact">Contact us</a>
-                        <button className="btn btn-dark px-4">Login</button>
+                        <button className="btn btn-dark px-4 "><Link className="text-white"to="/adminPanel">Admin Panel</Link></button>
                     </div>
                 </div>
             </nav>

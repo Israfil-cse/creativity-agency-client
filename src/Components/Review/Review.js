@@ -32,7 +32,7 @@ const Review = () => {
         formData.append('surName', info.surName);
         formData.append('discription', info.discription);
 
-        fetch('http://localhost:4000/customarReview', {
+        fetch('https://frozen-beyond-82990.herokuapp.com/customarReview', {
             method: 'POST',
             body: formData
         })
@@ -65,13 +65,13 @@ const Review = () => {
                     </div>
                     <div className="from_area">
                         <form className="pt-5 pl-5" onSubmit={handleSubmit}>
-                            <input onBlur={handleBlur} className="form-control" name="name" placeholder="your name" required />
+                            <input onBlur={handleBlur} className="form-control newInput" name="name" placeholder="your name" required />
                             <br />
                             <br />
-                            <input onBlur={handleBlur} className="form-control" name="surName" placeholder="comphanys name designation" required />
+                            <input onBlur={handleBlur} className="form-control newInput" name="surName" placeholder="comphanys name designation" required />
                             <br />
                             <br />
-                            <textarea onBlur={handleBlur} className="form-control py-4" name="discription" placeholder="Discription" required />
+                            <textarea onBlur={handleBlur} className="form-control py-4 newInput" name="discription" placeholder="Discription" required />
                             <br />
                             <br />
                             <input onChange={handleFileChange} type="file" />

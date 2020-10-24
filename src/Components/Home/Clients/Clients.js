@@ -7,7 +7,7 @@ const Clients = () => {
 
     // // ADD fakeData to real Database
     // const handlAddData = () => {
-    //         fetch('http://localhost:4000/addClicntData', {
+    //         fetch('https://frozen-beyond-82990.herokuapp.com/addClicntData', {
     //             method: 'POST',
     //             headers: { 'Content-Type': 'application/json' },
     //             body: JSON.stringify(fakedata)
@@ -19,7 +19,7 @@ const Clients = () => {
     // review data approve
     const [clientReview, setClientReview] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:4000/reviewApprove')
+        fetch('https://frozen-beyond-82990.herokuapp.com/reviewApprove')
             .then(res => res.json())
             .then(data => setClientReview(data))
     }, []);

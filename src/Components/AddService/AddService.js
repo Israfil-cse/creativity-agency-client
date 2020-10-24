@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import logo from '../../images/logos/logo.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserPlus, } from '@fortawesome/free-solid-svg-icons'
+
 
 const AddService = () => {
 
@@ -28,7 +31,7 @@ const AddService = () => {
         formData.append('title', serviceinfo.title);
         formData.append('discription', serviceinfo.discription);
 
-        fetch('http://localhost:4000/addService', {
+        fetch('https://frozen-beyond-82990.herokuapp.com/addService', {
             method: 'POST',
             body: formData
         })
@@ -49,9 +52,8 @@ const AddService = () => {
                         <img style={{ height: '50px' }} src={logo} alt="" />
                     </figure>
                     <nav className="pl-5 mt-5">
-                    <li><Link to="/ServicesUser">Services User</Link></li>
                         <li>Add Service</li>
-                        <li><Link to="/mekeAdmin">Make Admin</Link></li>
+                        <li><Link to="/makeAdmin"><FontAwesomeIcon icon={faUserPlus} /> Make Admin</Link></li>
                     </nav>
                 </div>
                 <div className="col-md-9">

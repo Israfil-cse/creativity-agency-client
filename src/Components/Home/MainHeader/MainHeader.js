@@ -11,9 +11,10 @@ const MainHeader = () => {
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quae sint provident, error quo porro ea corporis deleniti laudantium, eius dolorum voluptatum, eveniet saepe adipisci! Nihil excepturi obcaecati facere laudantium?</p>
                 <button className=" btn btn-dark px-5">Hire Us</button>
                 </div>
-                <div className="col-md-6 mb-3">
+                <div className="col-md-6 mb-1">
                     <img className="img-fluid baner" src={baner} alt="" />
                 </div>
+                
         </div>
     </div >
     );

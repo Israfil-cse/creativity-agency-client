@@ -15,7 +15,7 @@ const ServiceList = () => {
     const [exactOrder, setExactOrder] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:4000/exactUserOrder?email=' + loggedInUser.email)
+        fetch('https://frozen-beyond-82990.herokuapp.com/exactUserOrder?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => setExactOrder(data));
     }, []);

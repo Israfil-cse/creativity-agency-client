@@ -25,7 +25,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <p className="text-center mt-5 pt-5 pb-5">copyright orange labs 2020</p>
+            <p className="text-center mt-5 pt-5 pb-5">All rights reserved israfil-cse</p>
         </footer>
     );
 };

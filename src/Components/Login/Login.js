@@ -23,6 +23,7 @@ const Login = () => {
             const {displayName, email} = result.user;
             const signInUser = {name: displayName, email};
             setLoggedInUser(signInUser);
+            sessionStorage.setItem("userEmail",result.user.email)
             history.replace(from)
           }).catch(function(error) {
             // Handle Errors here.
@@ -40,7 +41,7 @@ const Login = () => {
                 <div className="parentForm">
                     <h3 className="text-center mt-5">Login</h3>
                     <div className="btnStyle d-flex justify-content-center">
-                        <button onClick={handleGoogleSignIn}><img src={google} alt="" />Continue With Google</button>
+                        <button onClick={handleGoogleSignIn}><img className="img-fluid" src={google} alt="" />Continue With Google</button>
                     </div>
                     <h6 className="text-center">Don't have an account? <a href="#">Create a new account</a></h6>
                 </div>

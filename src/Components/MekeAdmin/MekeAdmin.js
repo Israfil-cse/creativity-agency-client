@@ -28,9 +28,7 @@ const MekeAdmin = () => {
                         <img style={{ height: '50px' }} src={logo} alt="" />
                     </figure>
                     <nav className="pl-5 mt-5">
-                        <li><Link to="/ServicesUser">Services User</Link></li>
-                        <li><Link to="/addService">Add Service</Link></li>
-                        <li><Link to="/mekeAdmin">Make Admin</Link></li>
+                        <li>Make Admin</li>
                     </nav>
                 </div>
                 <div className="col-md-9">
