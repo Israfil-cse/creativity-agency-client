@@ -29,7 +29,7 @@ const PlacedOrder = () => {
     }, []);
 
     useEffect(() => {
-        fetch(`http://localhost:4000/checkAdmin?email=${loggedInUser.email}`)
+        fetch(`https://frozen-beyond-82990.herokuapp.com/checkAdmin?email=${loggedInUser.email}`)
             .then(res => res.json())
             .then(data => {
                 if (data.admin === true) {

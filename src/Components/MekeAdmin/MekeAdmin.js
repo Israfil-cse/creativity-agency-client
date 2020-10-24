@@ -7,7 +7,7 @@ const MekeAdmin = () => {
     const history = useHistory();
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:4000/addAdmin', {
+        fetch('https://frozen-beyond-82990.herokuapp.com/addAdmin', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
